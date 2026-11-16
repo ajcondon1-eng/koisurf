@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KoiSurf — Ride the wave. Flow like a koi.</title>
+  <title>KoiSurf — Flow like a koi. Ride the wild surf.</title>
   <meta name="description" content="KoiSurf — playful, fluid web experiences that dance like koi in the waves." />
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -20,6 +20,7 @@
           },
           fontFamily: {
             display: ['"Baloo 2"', 'cursive'],
+            impact: ['"Archivo Black"', 'system-ui', 'sans-serif'],
             body: ['"Nunito"', 'sans-serif'],
           },
         }
@@ -29,7 +30,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ---------- Base ---------- */
@@ -136,6 +137,21 @@
       background: rgba(255,255,255,.08);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255,255,255,.18);
+    }
+
+    /* ---------- Hero headline flourish ---------- */
+    .hero-line { display: inline-block; transition: transform .4s cubic-bezier(.22,1,.36,1); transform-origin: center; }
+    h1:hover .hero-line { transform: scale(1.03) translateY(-2px); }
+    .wave-underline { display: inline-block; position: relative; }
+    .wave-underline::after {
+      content: '';
+      position: absolute; left: 0.03em; right: 0.03em; bottom: 0.04em;
+      height: 0.1em; border-radius: 9999px;
+      background: linear-gradient(90deg, #FFC53D, #FF6B4A);
+      opacity: .9;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      h1:hover .hero-line { transform: none; }
     }
 
     ::selection { background: #FFC53D; color: #083D5B; }
@@ -276,9 +292,9 @@
       <span class="w-2 h-2 rounded-full bg-koi-400 animate-pulse"></span>
       Making waves since day one
     </div>
-    <h1 class="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl leading-[1.05] text-white drop-shadow-lg">
-      Ride the wave.<br/>
-      <span class="bg-gradient-to-r from-koi-300 via-coral-300 to-koi-400 bg-clip-text text-transparent">Flow like a koi.</span>
+    <h1 class="font-impact uppercase text-5xl sm:text-7xl md:text-8xl leading-[0.95] tracking-tight text-white drop-shadow-[0_4px_24px_rgba(8,61,91,0.5)]">
+      <span class="hero-line">Flow like a koi.</span><br/>
+      <span class="hero-line wave-underline bg-gradient-to-r from-koi-300 via-coral-400 to-koi-400 bg-clip-text text-transparent">Ride the wild surf.</span>
     </h1>
     <p class="mt-6 text-lg sm:text-xl text-cream-100/90 max-w-xl mx-auto font-semibold">
       KoiSurf builds playful, fluid web experiences that glide through the digital ocean — beautiful, fast, and alive.
